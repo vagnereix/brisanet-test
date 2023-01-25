@@ -34,7 +34,7 @@ $ yarn
 # definindo com as SUAS variáveis de ambiente.
 
 # Rode o projeto
-yarn dev
+yarn start
 ```
 
 Pronto! Você pode visualizar o ignews através do endereço http://localhost:3000
