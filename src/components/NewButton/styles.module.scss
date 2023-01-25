@@ -1,0 +1,35 @@
+.newButton {
+  max-width: 250px;
+  width: 100%;
+  height: 50px;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  background: var(--paginator-gradient-linear);
+  color: var(--white);
+  padding: 0 2rem;
+
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  cursor: pointer;
+
+  margin-left: auto;
+
+  svg {
+    max-width: 15px;
+  }
+
+  &:not(:disabled):hover {
+    filter: brightness(0.95);
+  }
+
+  transition: filter 0.2s;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

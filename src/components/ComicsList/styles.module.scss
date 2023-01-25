@@ -1,0 +1,115 @@
+.content {
+  max-width: 1120px;
+  margin: 0 auto;
+
+  margin-top: 4rem;
+
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem;
+
+    .loading {
+      width: 80px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+
+      border: 5px solid var(--red-900);
+      border-left: 0px;
+
+      animation: load 1s infinite linear;
+
+      @keyframes load {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+
+  table {
+    width: 100%; // padrão da table não ocupa todo o espaço
+    border-spacing: 0 0.5rem;
+    margin-top: 2rem;
+
+    th {
+      color: var(--gray-500);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      text-align: left;
+      line-height: 1.5rem; // mais espaçamento - distância entre linhas
+    }
+
+    td {
+      max-width: 250px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+
+      padding: 0.5rem 1rem;
+      border: 0;
+      background: var(--white);
+      color: var(--red-900);
+      font-weight: 500;
+
+      text-transform: capitalize;
+
+      &:first-child {
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+      }
+
+      &:last-child {
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+      }
+
+      img {
+        width: 5rem;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        border-radius: 0.25rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
+
+      > div {
+        display: flex;
+        align-items: center;
+
+        gap: 0.3rem;
+
+        .button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: inherit;
+
+          padding: 0.5rem;
+
+          border: 0;
+
+          svg path {
+            transition: 0.2s;
+            stroke: var(--gray-300);
+            fill: var(--gray-300);
+          }
+
+          &:hover {
+            cursor: pointer;
+
+            svg path {
+              stroke: var(--red);
+              fill: var(--red);
+            }
+          }
+        }
+      }
+    }
+  }
+}
