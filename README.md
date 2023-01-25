@@ -41,9 +41,10 @@ Pronto! Você pode visualizar o ignews através do endereço http://localhost:30
 
 ## 🚀 Tecnologias
 
-- [Vite](https://vitejs.dev/)
 - [ReactJS](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Google Maps API](https://developers.google.com/maps/apis-by-platform?hl=pt-br)
+- [Marvel API](https://developer.marvel.com/)
 
 ##
 
