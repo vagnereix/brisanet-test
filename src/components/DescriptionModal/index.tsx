@@ -1,5 +1,5 @@
 import { GoogleMap, Marker, StandaloneSearchBox } from '@react-google-maps/api';
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useState } from 'react';
 import Modal from 'react-modal';
 import styles from './styles.module.scss';
 
@@ -19,7 +19,6 @@ export function DescriptionModal({
   comic,
   onRequestClose,
 }: DescriptionModalProps) {
-  const formRef = useRef<HTMLFormElement | null>(null);
   const [map, setMap] = useState<google.maps.Map | null>(null);
   const [searchBox, setSearchBox] = useState<google.maps.places.SearchBox>();
   const [formattedAddress, setFormattedAddress] = useState<string>('');
@@ -33,7 +32,6 @@ export function DescriptionModal({
     geocoder.geocode({ location: latLng }, function (results, status) {
       if (status === google.maps.GeocoderStatus.OK) {
         setFormattedAddress(results![0].formatted_address);
-        formRef.current?.reset();
       } else {
         return toast.error(`We can't find this address or coordinates.`, {
           position: 'top-right',
@@ -184,15 +182,17 @@ export function DescriptionModal({
             onLoad={onLoad}
             onPlacesChanged={onPlacesChanged}
           >
-            <form ref={formRef}>
+            <>
               <input
                 type='text'
+                value={formattedAddress}
+                onChange={(event) => setFormattedAddress(event?.target.value)}
                 placeholder='Type some adress to send this comic'
               />
               <button type='button' onClick={sendComic}>
                 Send
               </button>
-            </form>
+            </>
           </StandaloneSearchBox>
         </GoogleMap>
       </section>
